@@ -1,0 +1,8 @@
+{
+  "name": "Боева Система Шуманов - Combat Systema Shumanov",
+  "description": "Официјален веб сајт за Боева Система Шуманов (Combat Systema Shumanov) - тренинг, филозофија, природно движење и борбена подготовка.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
