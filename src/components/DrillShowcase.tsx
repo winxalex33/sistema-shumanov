@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { VIDEO_DRILLS, CONTENT_MK, CONTENT_LATIN } from '../data/content';
+import { ASSET_PATHS, VIDEO_DRILLS, CONTENT_MK, CONTENT_LATIN } from '../data/content';
 import { Language, VideoDrill } from '../types';
 import { Play, Pause, Volume2, VolumeX, Maximize2, Upload, Video, RotateCcw, Check, Sparkles } from 'lucide-react';
 
@@ -18,7 +18,7 @@ export const DrillShowcase: React.FC<DrillShowcaseProps> = ({ language }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const currentVideoSrc = customVideoUrl || activeDrill.videoSrc || '/videos/hero_loop.mp4';
+  const currentVideoSrc = customVideoUrl || activeDrill.videoSrc || ASSET_PATHS.heroVideo;
 
   const handlePlayPause = () => {
     if (!videoRef.current) return;
@@ -102,12 +102,11 @@ export const DrillShowcase: React.FC<DrillShowcaseProps> = ({ language }) => {
                 loop
                 muted={isMuted}
                 playsInline
+                preload="metadata"
                 className="w-full h-full object-cover"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
               >
-                <source src={currentVideoSrc} type="video/webm" />
-                <source src={currentVideoSrc.replace('.webm', '.mp4')} type="video/mp4" />
                 {language === 'mk' ? 'Вашиот прелистувач не поддржува видео таг.' : 'Your browser does not support the video tag.'}
               </video>
 
@@ -266,7 +265,7 @@ export const DrillShowcase: React.FC<DrillShowcaseProps> = ({ language }) => {
                   <div className="mt-2.5 flex items-center justify-between text-[11px] font-mono text-neutral-400 pt-2 border-t border-neutral-800/60">
                     <span className="flex items-center gap-1.5 text-neutral-300">
                       <Video className="w-3.5 h-3.5 text-red-500" />
-                      <span>Автентична снимка</span>
+                      <span>{language === 'mk' ? 'Автентично видео' : 'Authentic footage'}</span>
                     </span>
                     <span className={isSelected ? 'text-red-400 font-bold' : 'text-neutral-400'}>
                       {isSelected ? '● Сега се пушта' : 'Пушти →'}
@@ -279,21 +278,6 @@ export const DrillShowcase: React.FC<DrillShowcaseProps> = ({ language }) => {
                 </div>
               );
             })}
-
-            {/* Practical instructions box for GitHub Pages Deployment */}
-            <div className="mt-2 p-4 bg-black border border-neutral-800 rounded-xs text-xs text-neutral-400 leading-relaxed">
-              <span className="text-red-500 font-bold font-mono block mb-1">
-                ★ КАКО СЕ ПУШТААТ ВАШИТЕ 3 ВИДЕА НА GITHUB PAGES:
-              </span>
-              <p className="text-[11px] text-neutral-300">
-                Вашите 3 видеа од тренингот (ластици, мост и песок) можат директно да се пуштаат на GitHub со тоа што ќе ги ставите во папката <code className="text-red-400 font-mono">public/videos/</code> како:
-              </p>
-              <ul className="list-disc list-inside space-y-0.5 text-[11px] text-neutral-400 mt-1 font-mono">
-                <li><code className="text-white">public/videos/video1_lastici.mp4</code></li>
-                <li><code className="text-white">public/videos/video2_sparing_most.mp4</code></li>
-                <li><code className="text-white">public/videos/video3_pesok.mp4</code></li>
-              </ul>
-            </div>
 
           </div>
 
