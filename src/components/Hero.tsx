@@ -54,6 +54,20 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
           </a>
         </div>
 
+        <div className="mt-7 w-full max-w-3xl overflow-hidden border border-neutral-800 bg-black shadow-[0_0_28px_rgba(229,9,20,0.12)]">
+          <video
+            src={ASSET_PATHS.heroVideo}
+            controls
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-label={language === 'mk' ? 'Видео за Боевата Система Шуманов' : 'Combat System Shumanov video'}
+            className="block w-full aspect-video object-contain bg-black"
+          />
+        </div>
+
         <div className="mt-10 w-full max-w-4xl grid grid-cols-2 lg:grid-cols-4 gap-3 text-left">
           {t.stats.map((stat, idx) => (
             <div
