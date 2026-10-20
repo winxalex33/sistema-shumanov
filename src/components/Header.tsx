@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { CONTACT_INFO } from '../data/content';
-import { Phone, Menu, X, Globe, CalendarCheck, Flame } from 'lucide-react';
+import { Phone, Menu, X, Globe } from 'lucide-react';
 import { Language } from '../types';
 
 interface HeaderProps {
   language: Language;
   onToggleLanguage: () => void;
-  onOpenBooking: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   language,
-  onToggleLanguage,
-  onOpenBooking
+  onToggleLanguage
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -110,14 +108,6 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="font-semibold">{language === 'mk' ? 'КИР' : 'LAT'}</span>
             </button>
 
-            {/* Primary Action Button */}
-            <button
-              onClick={onOpenBooking}
-              className="bg-red-600 hover:bg-red-700 active:scale-[0.98] text-white text-xs font-bold tracking-wider uppercase px-4 py-2.5 rounded-xs transition-all duration-200 shadow-[0_0_20px_rgba(229,9,20,0.4)] hover:shadow-[0_0_30px_rgba(229,9,20,0.7)] flex items-center gap-2 cursor-pointer"
-            >
-              <CalendarCheck className="w-3.5 h-3.5" />
-              <span>{language === 'mk' ? 'Закажи Тренинг' : 'Book Session'}</span>
-            </button>
           </div>
 
           {/* Mobile Menu & Language Toggle */}
@@ -165,16 +155,6 @@ export const Header: React.FC<HeaderProps> = ({
               <span>{CONTACT_INFO.phone} (Шуманов)</span>
             </a>
 
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenBooking();
-              }}
-              className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 text-sm rounded-xs tracking-wider uppercase shadow-[0_0_15px_rgba(229,9,20,0.5)] flex items-center justify-center gap-2"
-            >
-              <CalendarCheck className="w-4 h-4" />
-              <span>{language === 'mk' ? 'Закажи бесплатен тренинг' : 'Book Free Session'}</span>
-            </button>
           </div>
         </div>
       )}

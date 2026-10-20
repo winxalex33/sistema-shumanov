@@ -183,7 +183,7 @@ export const DrillShowcase: React.FC<DrillShowcaseProps> = ({ language }) => {
                     {activeDrill.title}
                   </h3>
                   <span className="text-xs font-mono text-red-400 font-semibold">
-                    Ниво: {activeDrill.difficulty} · Времетраење: ~{activeDrill.duration} мин
+                    Ниво: {activeDrill.difficulty}
                   </span>
                 </div>
 
@@ -253,6 +253,20 @@ export const DrillShowcase: React.FC<DrillShowcaseProps> = ({ language }) => {
                       {drill.difficulty}
                     </span>
                   </div>
+
+                  {drill.videoSrc && (
+                    <video
+                      src={drill.videoSrc}
+                      controls
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      aria-label={drill.title}
+                      onClick={(event) => event.stopPropagation()}
+                      className="mt-3 w-full aspect-video object-cover bg-black border border-neutral-800"
+                    />
+                  )}
 
                   <h4 className="mt-1 text-sm sm:text-base font-bold text-white font-cinzel">
                     {drill.title}

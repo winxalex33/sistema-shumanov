@@ -3,8 +3,9 @@ import { TrainingPillar, MethodCard, VideoDrill } from '../types';
 export const ASSET_PATHS = {
   emblem: `/assets/${encodeURIComponent('Емблема на волк „SHUMANOV“.png')}`,
   heroVideo: `/assets/${encodeURIComponent('mainVideoShould go at starting focus and loop.mp4')}`,
-  conditioningVideo: '/assets/0-02-05-31b4abe0ae1ce96542f071457a0c564386d34a6688cd3780acf375045fe89041_d7b642d28efebfa1.mp4',
-  sparringVideo: '/assets/0-02-05-3577397713b282b96224f87bd6cb7bd20052f914e5d347cf6ddce9783d2085a1_cafdd4ce8f35a974.mp4'
+  conditioningVideo: '/assets/excerciseScene1.mp4',
+  sparringVideo: '/assets/fightScene1.mp4',
+  sparringVideoTwo: '/assets/fightScene2.mp4'
 } as const;
 
 export const CONTACT_INFO = {
@@ -31,7 +32,6 @@ export const CONTENT_MK = {
   
   ctaPrimary: 'Запознај се со Системата',
   ctaSecondary: 'Истражи ги методите на тренинг',
-  ctaBook: 'Закажи бесплатен тренинг',
 
   stats: [
     { value: '100%', label: 'Природно Движење', desc: 'Без механичка вкочанетост' },
@@ -55,9 +55,7 @@ export const CONTENT_MK = {
   showcaseHeading: 'Реални Тренинзи во Движење',
   showcaseSubheading: 'Преку специјално борбено кондиционирање, динамички задачи, партнерски вежби и работа со сопствена тежина.',
 
-  faqHeading: 'Често Поставувани Прашања',
-  contactHeading: 'Контактирајте нè и Закажете Термин',
-  contactSubheading: 'Направете го првиот чекор кон целосна контрола на сопственото тело и ум.'
+  faqHeading: 'Често Поставувани Прашања'
 };
 
 export const CONTENT_LATIN = {
@@ -71,7 +69,6 @@ export const CONTENT_LATIN = {
   
   ctaPrimary: 'Discover the System',
   ctaSecondary: 'Explore Training Methods',
-  ctaBook: 'Book First Free Session',
 
   stats: [
     { value: '100%', label: 'Natural Movement', desc: 'Zero artificial rigidity' },
@@ -95,9 +92,7 @@ export const CONTENT_LATIN = {
   showcaseHeading: 'Real Training in Action',
   showcaseSubheading: 'Through combat conditioning, dynamic tasks, partner drills, elastic band power development, and outdoor functional mastery.',
 
-  faqHeading: 'Frequently Asked Questions',
-  contactHeading: 'Contact & Training Booking',
-  contactSubheading: 'Take the first decisive step toward complete mastery of your body and mind under pressure.'
+  faqHeading: 'Frequently Asked Questions'
 };
 
 export const TRAINING_PILLARS: TrainingPillar[] = [
@@ -202,23 +197,33 @@ export const METHOD_CARDS: MethodCard[] = [
 export const VIDEO_DRILLS: VideoDrill[] = [
   {
     id: 'drill-1',
-    title: 'Експлозивна Ударна Моќ со Еластични Ленти',
+    title: 'Борбено Кондиционирање',
     category: 'Кондиционирање',
-    duration: '0:45',
-    description: 'Динамички отпор при исфрлање директи и крошеа со зачувување на олабавено рамо и правилна биомеханика на карлицата.',
-    tags: ['Ластици', 'Експлозивност', 'Кеј Вардар'],
+    duration: 'Тренинг',
+    description: 'Вежби за кондиција и функционално движење во тренажен ритам.',
+    tags: ['Кондиција', 'Движење', 'Тренинг'],
     difficulty: 'Сите нивоа',
     videoSrc: ASSET_PATHS.conditioningVideo
   },
   {
     id: 'drill-2',
-    title: 'Партнерски Спаринг & Евазија на Мост',
-    category: 'Реален Спаринг',
-    duration: '0:50',
-    description: 'Борбени симулации при ноќни услови: маневрирање, контрола на дистанца, минимални отклонувања и прецизни контра-удари.',
-    tags: ['Ноќен Спаринг', 'Рефлекси', 'Дистанца'],
+    title: 'Партнерски Борбени Вежби',
+    category: 'Партнерска Работа',
+    duration: 'Тренинг',
+    description: 'Партнерска работа со фокус на движење, тајминг и одржување контакт.',
+    tags: ['Партнер', 'Контакт', 'Тајминг'],
     difficulty: 'Напредни',
     videoSrc: ASSET_PATHS.sparringVideo
+  },
+  {
+    id: 'drill-3',
+    title: 'Движење и Спаринг',
+    category: 'Борбена Примена',
+    duration: 'Тренинг',
+    description: 'Динамични борбени вежби со движење и реакција на партнер.',
+    tags: ['Движење', 'Реакција', 'Спаринг'],
+    difficulty: 'Сите нивоа',
+    videoSrc: ASSET_PATHS.sparringVideoTwo
   }
 ];
 

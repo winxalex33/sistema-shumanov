@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
-import { METHOD_CARDS, CONTENT_MK, CONTENT_LATIN } from '../data/content';
+import { METHOD_CARDS, CONTENT_MK, CONTENT_LATIN, CONTACT_INFO } from '../data/content';
 import { Language } from '../types';
-import { Dumbbell, Users, Swords, Activity, ArrowRight, ShieldCheck, CheckCircle } from 'lucide-react';
+import { Dumbbell, Users, Swords, Activity, ShieldCheck, CheckCircle } from 'lucide-react';
 
 interface TrainingMethodsProps {
   language: Language;
-  onSelectMethodForBooking?: (methodTitle: string) => void;
 }
 
-export const TrainingMethods: React.FC<TrainingMethodsProps> = ({
-  language,
-  onSelectMethodForBooking
-}) => {
+export const TrainingMethods: React.FC<TrainingMethodsProps> = ({ language }) => {
   const t = language === 'mk' ? CONTENT_MK : CONTENT_LATIN;
   const [activeCardId, setActiveCardId] = useState<string>(METHOD_CARDS[0].id);
 
@@ -117,18 +113,13 @@ export const TrainingMethods: React.FC<TrainingMethodsProps> = ({
                       ? (language === 'mk' ? 'Селектиран метод' : 'Selected method')
                       : (language === 'mk' ? 'Кликни за детал' : 'Click for details')}
                   </span>
-                  {onSelectMethodForBooking && (
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onSelectMethodForBooking(card.title);
-                      }}
-                      className="text-xs font-bold text-red-500 hover:text-red-400 flex items-center gap-1.5 focus:outline-none"
-                    >
-                      <span>{language === 'mk' ? 'Пријави се за ова' : 'Register for this'}</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  )}
+                  <a
+                    href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-xs font-bold text-red-500 hover:text-red-400"
+                  >
+                    {language === 'mk' ? 'Прашај за методот' : 'Ask about this method'}
+                  </a>
                 </div>
               </article>
             );

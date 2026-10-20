@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ language, onOpenExportModal }) =
   const brandSub = language === 'mk' ? 'БОЕВА СИСТЕМА' : 'COMBAT SYSTEM';
 
   return (
-    <footer className="bg-black border-t-2 border-neutral-900 text-neutral-400 pt-16 pb-12 px-4 sm:px-6 lg:px-8 relative">
+    <footer id="contact" className="bg-black border-t-2 border-neutral-900 text-neutral-400 pt-16 pb-12 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto">
         
         {/* Top Grid */}

@@ -68,9 +68,12 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
     .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
     
     /* Hero */
-    .hero { padding: 5rem 0 4rem; text-align: center; }
-    .hero h1 { font-family: 'Cinzel', serif; font-size: 2.5rem; margin-bottom: 1rem; text-transform: uppercase; }
+    .hero { padding: 4rem 0; background: #000; }
+    .hero-grid { display: grid; grid-template-columns: 1fr; align-items: center; gap: 1.5rem; }
+    .hero-copy { position: relative; z-index: 1; text-align: center; }
+    .hero h1 { font-family: 'Cinzel', serif; font-size: 3.5rem; margin-bottom: 1rem; text-transform: uppercase; }
     .hero p.motto { color: var(--red); font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; }
+    .hero-emblem { display: block; width: min(78vw, 460px); object-fit: contain; margin: 0 auto; }
     .btn { display: inline-block; background: var(--red); color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; font-weight: 700; text-transform: uppercase; border-radius: 2px; margin: 0.25rem; box-shadow: 0 0 15px var(--red-glow); }
     .btn-outline { background: transparent; border: 1px solid var(--border); }
     
@@ -81,9 +84,18 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
     .card:hover { border-color: var(--red); }
     .card h3 { font-family: 'Cinzel', serif; font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff; }
     .highlight { color: var(--red); font-weight: bold; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .video-card { background: #000; border: 1px solid var(--border); overflow: hidden; text-align: left; }
+    .video-card video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #000; }
+    .video-card h3 { padding: .75rem 1rem .25rem; font-size: 1rem; }
+    .video-card p { padding: 0 1rem 1rem; color: var(--text-muted); font-size: .8rem; }
     
     /* Footer */
     footer { padding: 3rem 0; background: #000; border-top: 1px solid var(--border); text-align: center; font-size: 0.875rem; color: var(--text-muted); }
+    @media (max-width: 800px) {
+      .hero-grid { gap: 1rem; }
+      .hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+    }
   </style>
 </head>
 <body>
@@ -94,6 +106,7 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
         <ul>
           <li><a href="#philosophy">Филозофија</a></li>
           <li><a href="#methods">Методи</a></li>
+          <li><a href="#showcase">Видео</a></li>
           <li><a href="#contact">Контакт</a></li>
         </ul>
       </nav>
@@ -103,32 +116,53 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
 
   <main>
     <section class="hero">
-      <div class="container">
-        <div style="color: var(--red); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.5rem;">COMBAT SYSTEM</div>
-        <h1>ШУМАНОВ</h1>
-        <div style="width: 240px; height: 3px; background: var(--red); margin: 0 auto 1.5rem;"></div>
-        <p class="motto">Тренирај го телото. Разбери го умот. Запознај се себеси.</p>
-        <p style="max-width: 650px; margin: 0 auto 2rem; color: var(--text-muted);">
-          Combat Systema Shumanov е интегративен систем на боречка обука и физички развој: природно движење, функционална сила, мобилност, жив контакт, дишење и присебност.
-        </p>
-        <a href="#philosophy" class="btn">Запознај се со Системата</a>
-        <a href="#contact" class="btn btn-outline">Закажи Тренинг</a>
+      <div class="container hero-grid">
+        <div>
+          <img class="hero-emblem" src="assets/%D0%95%D0%BC%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0%20%D0%BD%D0%B0%20%D0%B2%D0%BE%D0%BB%D0%BA%20%E2%80%9ESHUMANOV%E2%80%9C.png" alt="Емблема на волк — Combat System Shumanov">
+        </div>
+        <div class="hero-copy">
+          <div style="color: var(--red); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.5rem;">COMBAT SYSTEM</div>
+          <h1>ШУМАНОВ</h1>
+          <div style="width: 240px; height: 3px; background: var(--red); margin: 0 auto 1.5rem;"></div>
+          <p class="motto">Тренирај го телото. Разбери го умот. Запознај се себеси.</p>
+          <p style="max-width: 650px; margin: 0 0 2rem; color: var(--text-muted);">
+            Combat Systema Shumanov е интегративен систем на боречка обука и физички развој: природно движење, функционална сила, мобилност, жив контакт, дишење и присебност.
+          </p>
+          <a href="#philosophy" class="btn">Запознај се со Системата</a>
+          <a href="tel:070342580" class="btn btn-outline">Контактирај</a>
+        </div>
       </div>
     </section>
 
     <section id="showcase">
       <div class="container" style="text-align: center;">
         <h2 class="section-title">Автентични Тренинзи во Живо</h2>
-        <div style="max-width: 800px; margin: 0 auto 2rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; box-shadow: 0 0 25px var(--red-glow); background: #000;">
-          <video controls autoplay loop muted playsinline poster="logo.jpg" style="width: 100%; display: block;">
-            <source src="videos/video1_lastici.mp4" type="video/mp4">
-            <source src="videos/video1_lastici.webm" type="video/webm">
-            Вашиот прелистувач не поддржува видео таг.
-          </video>
+        <div class="video-grid">
+          <article class="video-card">
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/excerciseScene1.mp4" type="video/mp4">
+              Вашиот прелистувач не поддржува видео таг.
+            </video>
+            <h3>Борбено Кондиционирање</h3>
+            <p>Вежби за кондиција и функционално движење.</p>
+          </article>
+          <article class="video-card">
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/fightScene1.mp4" type="video/mp4">
+              Вашиот прелистувач не поддржува видео таг.
+            </video>
+            <h3>Партнерски Борбени Вежби</h3>
+            <p>Партнерска работа со фокус на движење и контакт.</p>
+          </article>
+          <article class="video-card">
+            <video controls loop muted playsinline preload="metadata">
+              <source src="assets/fightScene2.mp4" type="video/mp4">
+              Вашиот прелистувач не поддржува видео таг.
+            </video>
+            <h3>Движење и Спаринг</h3>
+            <p>Динамични борбени вежби со движење и реакција.</p>
+          </article>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.875rem;">
-          Специјално борбено кондиционирање со еластични ленти, спаринг на мост и вежби на песок.
-        </p>
       </div>
     </section>
 
