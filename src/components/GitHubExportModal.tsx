@@ -84,11 +84,7 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
     .card:hover { border-color: var(--red); }
     .card h3 { font-family: 'Cinzel', serif; font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff; }
     .highlight { color: var(--red); font-weight: bold; }
-    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
-    .video-card { background: #000; border: 1px solid var(--border); overflow: hidden; text-align: left; }
-    .video-card video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #000; }
-    .video-card h3 { padding: .75rem 1rem .25rem; font-size: 1rem; }
-    .video-card p { padding: 0 1rem 1rem; color: var(--text-muted); font-size: .8rem; }
+    .method-video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin-top: 1rem; background: #000; }
     
     /* Footer */
     footer { padding: 3rem 0; background: #000; border-top: 1px solid var(--border); text-align: center; font-size: 0.875rem; color: var(--text-muted); }
@@ -106,7 +102,6 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
         <ul>
           <li><a href="#philosophy">Филозофија</a></li>
           <li><a href="#methods">Методи</a></li>
-          <li><a href="#showcase">Видео</a></li>
           <li><a href="#contact">Контакт</a></li>
         </ul>
       </nav>
@@ -134,38 +129,6 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
       </div>
     </section>
 
-    <section id="showcase">
-      <div class="container" style="text-align: center;">
-        <h2 class="section-title">Автентични Тренинзи во Живо</h2>
-        <div class="video-grid">
-          <article class="video-card">
-            <video controls loop muted playsinline preload="metadata">
-              <source src="assets/excerciseScene1.mp4" type="video/mp4">
-              Вашиот прелистувач не поддржува видео таг.
-            </video>
-            <h3>Борбено Кондиционирање</h3>
-            <p>Вежби за кондиција и функционално движење.</p>
-          </article>
-          <article class="video-card">
-            <video controls loop muted playsinline preload="metadata">
-              <source src="assets/fightScene1.mp4" type="video/mp4">
-              Вашиот прелистувач не поддржува видео таг.
-            </video>
-            <h3>Партнерски Борбени Вежби</h3>
-            <p>Партнерска работа со фокус на движење и контакт.</p>
-          </article>
-          <article class="video-card">
-            <video controls loop muted playsinline preload="metadata">
-              <source src="assets/fightScene2.mp4" type="video/mp4">
-              Вашиот прелистувач не поддржува видео таг.
-            </video>
-            <h3>Движење и Спаринг</h3>
-            <p>Динамични борбени вежби со движење и реакција.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section id="philosophy">
       <div class="container">
         <h2 class="section-title">Филозофија & Принципи</h2>
@@ -185,6 +148,30 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
           <article class="card">
             <h3>04. Животот е за Живеење</h3>
             <p>Подготвени за борбата кога е неопходно, но и доволно слободни за да уживаме во животот.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="methods">
+      <div class="container">
+        <h2 class="section-title">Методологија на Тренинг</h2>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Партнерски Вежби & Жив Контакт</h3>
+            <video class="method-video" controls autoplay loop muted playsinline preload="metadata">
+              <source src="assets/excerciseScene1.mp4" type="video/mp4">
+              Вашиот прелистувач не поддржува видео таг.
+            </video>
+            <p>Читање на тежината, векторите на сила, водење на напаѓачот и пренасочување на ударите без вкочанетост.</p>
+          </article>
+          <article class="card">
+            <h3>Ударна Техника & Евазија</h3>
+            <video class="method-video" controls autoplay loop muted playsinline preload="metadata">
+              <source src="assets/fightScene1.mp4" type="video/mp4">
+              Вашиот прелистувач не поддржува видео таг.
+            </video>
+            <p>Флуидни брановидни удари од секоја позиција со целосно тело и минимални евазии под притисок.</p>
           </article>
         </div>
       </div>

@@ -68,11 +68,6 @@ export const Footer: React.FC<FooterProps> = ({ language, onOpenExportModal }) =
                 </a>
               </li>
               <li>
-                <a href="#showcase" className="hover:text-red-400 transition-colors">
-                  {language === 'mk' ? 'Реални Тренинзи во Движење' : 'Live Drills'}
-                </a>
-              </li>
-              <li>
                 <a href="#faq" className="hover:text-red-400 transition-colors">
                   {language === 'mk' ? 'Често Поставувани Прашања' : 'FAQ'}
                 </a>

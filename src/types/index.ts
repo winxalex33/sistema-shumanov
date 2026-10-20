@@ -33,14 +33,3 @@ export interface MethodCard {
   focusAreas: string[];
   imagePlaceholderTitle: string;
 }
-
-export interface VideoDrill {
-  id: string;
-  title: string;
-  category: string;
-  duration: string;
-  description: string;
-  tags: string[];
-  difficulty: 'Основни' | 'Средни' | 'Напредни' | 'Сите нивоа';
-  videoSrc?: string;
-}

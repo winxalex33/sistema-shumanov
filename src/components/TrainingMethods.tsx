@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { METHOD_CARDS, CONTENT_MK, CONTENT_LATIN, CONTACT_INFO } from '../data/content';
+import { ASSET_PATHS, METHOD_CARDS, CONTENT_MK, CONTENT_LATIN, CONTACT_INFO } from '../data/content';
 import { Language } from '../types';
 import { Dumbbell, Users, Swords, Activity, ShieldCheck, CheckCircle } from 'lucide-react';
 
@@ -54,6 +54,11 @@ export const TrainingMethods: React.FC<TrainingMethodsProps> = ({ language }) =>
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {METHOD_CARDS.map((card) => {
             const isSelected = activeCardId === card.id;
+            const videoSrc = card.id === 'partner-drills'
+              ? ASSET_PATHS.conditioningVideo
+              : card.id === 'striking-evasion'
+                ? ASSET_PATHS.sparringVideo
+                : null;
 
             return (
               <article
@@ -80,6 +85,21 @@ export const TrainingMethods: React.FC<TrainingMethodsProps> = ({ language }) =>
                   <h3 className="mt-4 text-lg sm:text-xl font-cinzel font-bold text-white group-hover:text-red-400 transition-colors">
                     {card.title}
                   </h3>
+
+                  {videoSrc && (
+                    <video
+                      src={videoSrc}
+                      controls
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      aria-label={card.title}
+                      onClick={(event) => event.stopPropagation()}
+                      className="mt-4 w-full aspect-video object-cover bg-black border border-neutral-800"
+                    />
+                  )}
 
                   <p className="mt-1 text-xs font-semibold text-neutral-400 italic">
                     „{card.tagline}“

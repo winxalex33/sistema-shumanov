@@ -3,7 +3,6 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Philosophy } from './components/Philosophy';
 import { TrainingMethods } from './components/TrainingMethods';
-import { DrillShowcase } from './components/DrillShowcase';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { GitHubExportModal } from './components/GitHubExportModal';
@@ -33,11 +32,8 @@ export default function App() {
         {/* Philosophy & Principles */}
         <Philosophy language={language} />
 
-        {/* Training Methodology */}
+        {/* Training Methodology with inline method videos */}
         <TrainingMethods language={language} />
-
-        {/* Real Training Action & Drills Showcase */}
-        <DrillShowcase language={language} />
 
         {/* FAQ Accordion */}
         <FAQ language={language} />

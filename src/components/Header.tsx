@@ -26,13 +26,11 @@ export const Header: React.FC<HeaderProps> = ({
   const navLinks = language === 'mk' ? [
     { href: '#philosophy', label: 'Филозофија' },
     { href: '#methods', label: 'Методи на Тренинг' },
-    { href: '#showcase', label: 'Видео Снимки' },
     { href: '#faq', label: 'ЧПП' },
     { href: '#contact', label: 'Контакт' }
   ] : [
     { href: '#philosophy', label: 'Philosophy' },
     { href: '#methods', label: 'Methods' },
-    { href: '#showcase', label: 'Video Footage' },
     { href: '#faq', label: 'FAQ' },
     { href: '#contact', label: 'Contact' }
   ];

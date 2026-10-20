@@ -1,11 +1,10 @@
-import { TrainingPillar, MethodCard, VideoDrill } from '../types';
+import { TrainingPillar, MethodCard } from '../types';
 
 export const ASSET_PATHS = {
   emblem: `/assets/${encodeURIComponent('Емблема на волк „SHUMANOV“.png')}`,
   heroVideo: `/assets/${encodeURIComponent('mainVideoShould go at starting focus and loop.mp4')}`,
   conditioningVideo: '/assets/excerciseScene1.mp4',
-  sparringVideo: '/assets/fightScene1.mp4',
-  sparringVideoTwo: '/assets/fightScene2.mp4'
+  sparringVideo: '/assets/fightScene1.mp4'
 } as const;
 
 export const CONTACT_INFO = {
@@ -52,9 +51,6 @@ export const CONTENT_MK = {
   methodsHeading: 'Методологија на Тренинг',
   methodsSubheading: 'Нашиот пристап не се заснова само на механичко повторување техники. Преку движење, контакт, отпор, игра, спаринг и реалистични тренажни ситуации, ги поврзуваме физичката подготвеност, перцепцијата, координацијата и способноста за одлучување.',
 
-  showcaseHeading: 'Реални Тренинзи во Движење',
-  showcaseSubheading: 'Преку специјално борбено кондиционирање, динамички задачи, партнерски вежби и работа со сопствена тежина.',
-
   faqHeading: 'Често Поставувани Прашања'
 };
 
@@ -88,9 +84,6 @@ export const CONTENT_LATIN = {
 
   methodsHeading: 'Training Methodology',
   methodsSubheading: 'Our approach is not rote mechanical drilling. Through movement, living contact, resistance, play, sparring, and realistic scenarios, we unify physical readiness, perception, coordination, and rapid decision-making.',
-
-  showcaseHeading: 'Real Training in Action',
-  showcaseSubheading: 'Through combat conditioning, dynamic tasks, partner drills, elastic band power development, and outdoor functional mastery.',
 
   faqHeading: 'Frequently Asked Questions'
 };
@@ -191,39 +184,6 @@ export const METHOD_CARDS: MethodCard[] = [
       'рбетот, карлицата и зглобовите. Практикување дијафрагмално дишење за брзо смирување на пулсот, отстранување на млечната киселина и ментален ресет.',
     focusAreas: ['Мобилност на зглобовите и рбетниот столб', 'Регулација на напор преку здив', 'Акутна ментална присебност'],
     imagePlaceholderTitle: 'Биомеханика & Дишење'
-  }
-];
-
-export const VIDEO_DRILLS: VideoDrill[] = [
-  {
-    id: 'drill-1',
-    title: 'Борбено Кондиционирање',
-    category: 'Кондиционирање',
-    duration: 'Тренинг',
-    description: 'Вежби за кондиција и функционално движење во тренажен ритам.',
-    tags: ['Кондиција', 'Движење', 'Тренинг'],
-    difficulty: 'Сите нивоа',
-    videoSrc: ASSET_PATHS.conditioningVideo
-  },
-  {
-    id: 'drill-2',
-    title: 'Партнерски Борбени Вежби',
-    category: 'Партнерска Работа',
-    duration: 'Тренинг',
-    description: 'Партнерска работа со фокус на движење, тајминг и одржување контакт.',
-    tags: ['Партнер', 'Контакт', 'Тајминг'],
-    difficulty: 'Напредни',
-    videoSrc: ASSET_PATHS.sparringVideo
-  },
-  {
-    id: 'drill-3',
-    title: 'Движење и Спаринг',
-    category: 'Борбена Примена',
-    duration: 'Тренинг',
-    description: 'Динамични борбени вежби со движење и реакција на партнер.',
-    tags: ['Движење', 'Реакција', 'Спаринг'],
-    difficulty: 'Сите нивоа',
-    videoSrc: ASSET_PATHS.sparringVideoTwo
   }
 ];
 
