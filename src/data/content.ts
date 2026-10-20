@@ -1,5 +1,12 @@
 import { TrainingPillar, MethodCard, VideoDrill } from '../types';
 
+export const ASSET_PATHS = {
+  emblem: `/assets/${encodeURIComponent('Емблема на волк „SHUMANOV“.png')}`,
+  heroVideo: `/assets/${encodeURIComponent('mainVideoShould go at starting focus and loop.mp4')}`,
+  conditioningVideo: '/assets/0-02-05-31b4abe0ae1ce96542f071457a0c564386d34a6688cd3780acf375045fe89041_d7b642d28efebfa1.mp4',
+  sparringVideo: '/assets/0-02-05-3577397713b282b96224f87bd6cb7bd20052f914e5d347cf6ddce9783d2085a1_cafdd4ce8f35a974.mp4'
+} as const;
+
 export const CONTACT_INFO = {
   phone: '070 342 580',
   phoneFormatted: '+389 70 342 580',
@@ -201,7 +208,7 @@ export const VIDEO_DRILLS: VideoDrill[] = [
     description: 'Динамички отпор при исфрлање директи и крошеа со зачувување на олабавено рамо и правилна биомеханика на карлицата.',
     tags: ['Ластици', 'Експлозивност', 'Кеј Вардар'],
     difficulty: 'Сите нивоа',
-    videoSrc: '/videos/hero_loop.mp4'
+    videoSrc: ASSET_PATHS.conditioningVideo
   },
   {
     id: 'drill-2',
@@ -211,27 +218,7 @@ export const VIDEO_DRILLS: VideoDrill[] = [
     description: 'Борбени симулации при ноќни услови: маневрирање, контрола на дистанца, минимални отклонувања и прецизни контра-удари.',
     tags: ['Ноќен Спаринг', 'Рефлекси', 'Дистанца'],
     difficulty: 'Напредни',
-    videoSrc: '/videos/hero_loop.mp4'
-  },
-  {
-    id: 'drill-3',
-    title: 'Специјално Борбено Кондиционирање на Песок',
-    category: 'Издржливост',
-    duration: '1:00',
-    description: 'Синхронизирана групна работа на нестабилна подлога за зајакнување на тетивите, колената и стабилноста на трупот.',
-    tags: ['Песок', 'Стабилност', 'Труп'],
-    difficulty: 'Средни',
-    videoSrc: '/videos/hero_loop.mp4'
-  },
-  {
-    id: 'drill-4',
-    title: 'Одбрана од Удари со Нога & Влегување во Клинч',
-    category: 'Самоодбрана',
-    duration: '0:35',
-    description: 'Флуидно прифаќање на нападот со нога, пренасочување на тежиштето на противникот и соборување со минимален напор.',
-    tags: ['Удар со нога', 'Пренасочување', 'Рамнотежа'],
-    difficulty: 'Сите нивоа',
-    videoSrc: '/videos/hero_loop.mp4'
+    videoSrc: ASSET_PATHS.sparringVideo
   }
 ];
 

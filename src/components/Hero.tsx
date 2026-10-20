@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { CONTENT_MK, CONTENT_LATIN, CONTACT_INFO } from '../data/content';
+import { ASSET_PATHS, CONTENT_MK, CONTENT_LATIN } from '../data/content';
 import { Language } from '../types';
 import { ArrowRight, Volume2, VolumeX, Pause, Play, Upload, Sparkles, ChevronDown } from 'lucide-react';
 
@@ -11,7 +11,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ language, onOpenBooking }) => {
   const t = language === 'mk' ? CONTENT_MK : CONTENT_LATIN;
 
-  const [videoSrc, setVideoSrc] = useState<string>('/videos/hero_loop.mp4');
+  const [videoSrc, setVideoSrc] = useState<string>(ASSET_PATHS.heroVideo);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [isMuted, setIsMuted] = useState<boolean>(true);
   const [uploadStatus, setUploadStatus] = useState<string | null>(null);
@@ -150,6 +150,12 @@ export const Hero: React.FC<HeroProps> = ({ language, onOpenBooking }) => {
         
         {/* Pure Typographic Grand Title (No AI SVGs) */}
         <div className="inline-flex flex-col items-center max-w-2xl w-full">
+          <img
+            src={ASSET_PATHS.emblem}
+            alt="Емблема на волк — Combat System Shumanov"
+            className="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-[0_0_24px_rgba(229,9,20,0.25)]"
+          />
+
           {/* Subtitle with precision crimson rules */}
           <div className="flex items-center justify-center w-full gap-3 text-xs tracking-[0.35em] font-semibold text-neutral-300 uppercase">
             <span className="h-[2px] w-8 sm:w-16 bg-red-600 shadow-[0_0_8px_rgba(229,9,20,0.8)]"></span>
